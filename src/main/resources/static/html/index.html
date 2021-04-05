@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="../css/mystyle.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>COMILLAS TIMES</title>
+</head>
+
+  <body>
+    
+    <div id="cabecera" class="grid-container">
+      <a class="nav-link barra-nav" href="index.html">Comillas Times</a>
+      <a class="nav-link barra-nav" href="InicioSesion.html">Iniciar sesión</a>
+      <a class="nav-link barra-nav" href="contacto.html">Contacto</a>
+    </div>
+    
+    <header>
+      <h1>
+        COMILLAS TIMES
+      </h1>
+    </header>
+
+    <div class="grid-container">
+      <div id="titulo" class="titulo">
+        <b><i>Titulo noticia</i></b>
+      </div>
+      <div class="columna1">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra turpis id pharetra accumsan. Praesent et nibh non purus ultrices gravida sed id ligula. Curabitur luctus, erat non rutrum accumsan, nibh nisi tempor odio, finibus ultrices quam lectus ut elit. Donec molestie euismod nulla ut fermentum. 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra turpis id pharetra accumsan. Praesent et nibh non purus ultrices gravida sed id ligula. Curabitur luctus, erat non rutrum accumsan, nibh nisi tempor odio, finibus ultrices quam lectus ut elit. Donec molestie euismod nulla ut fermentum.
+        
+        </p>
+      </div>
+      <div class="foto">
+        <img src="https://www.telegraph.co.uk/content/dam/news/2021/02/13/TELEMMGLPICT000250980165_trans_NvBQzQNjv4Bqpm_LF87kdsxei4iXV0ieHEWYHtPejKUI5lLd-7nDZic.jpeg" width= "200" height= "121">
+      </div>
+      <div class="columna2">
+        <p>
+          Lorem ipsum <a href="https://dle.rae.es/dolor">dolor</a> sit amet, consectetur adipiscing elit. Maecenas viverra turpis id pharetra accumsan. Praesent et nibh non purus ultrices gravida sed id
+        </p>
+      </div>
+    </div>
+
+    <div id="aumentar">
+      click para leer mas
+    </div>
+
+    <footer>
+      <nav aria-label="...">
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script>
+      const aumentar = document.getElementById("aumentar");
+      var texto = [];
+      aumentar.addEventListener("click", function(){
+
+      fetch('../texto.json')
+      .then(response => response.json())
+      .then(data => {
+        texto=data;
+        aumentarNoticia();
+      })
+      .catch(e => {
+      console.error("Error " + e)
+      })
+      });
+
+
+      function aumentarNoticia(){
+      let html = '';
+      html += texto.texto;
+      document.getElementById("aumentar").innerHTML = html;
+      }
+    </script>
+    
+
+  </body>
+</html>

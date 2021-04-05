@@ -1,0 +1,61 @@
+div{
+  border: 1px solid black;
+}
+#cabecera{
+  border: 1px solid black;
+}
+nav{
+  border: 1px solid black;
+}
+
+header{
+  height: 50px;
+  text-align: center;
+}
+
+#titulo{
+  font-size: 2em;
+}
+.titulo{
+  text-align: center;
+  grid-area: titulo;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.columna1{
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.columna2{
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+.foto{
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1px;
+  padding: 1px;
+  border: 0px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 15px;
+  border: 0px;
+}
+#aumentar{
+    border: 0px;
+}
